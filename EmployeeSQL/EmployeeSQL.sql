@@ -116,7 +116,7 @@ WHERE dept_emp.emp_no = employees.emp_no
 --5.
 SELECT employees.first_name as "first name", employees.last_name as "last name", employees.sex
 FROM employees
-WHERE employees.first_name like 'Hercules'
+WHERE employees.first_name = 'Hercules'
       AND employees.last_name like 'B%';
 
 --6.
@@ -126,7 +126,7 @@ SELECT dept_emp.emp_no as "employee number",
 FROM dept_emp, departments, employees
 WHERE dept_emp.dept_no = departments.dept_no
       AND dept_emp.emp_no = employees.emp_no
-	  AND departments.dept_name like 'Sales';
+	  AND departments.dept_name = 'Sales';
 	  
 --7.
 SELECT dept_emp.emp_no as "employee number",    
@@ -135,7 +135,7 @@ SELECT dept_emp.emp_no as "employee number",
 FROM dept_emp, departments, employees
 WHERE dept_emp.dept_no = departments.dept_no
       AND dept_emp.emp_no = employees.emp_no
-	  AND (departments.dept_name like 'Sales' OR departments.dept_name like 'Development');
+	  AND (departments.dept_name = 'Sales' OR departments.dept_name = 'Development');
 
 --8.
 SELECT last_name as "last name", count(last_name) as "count employee share last name"
